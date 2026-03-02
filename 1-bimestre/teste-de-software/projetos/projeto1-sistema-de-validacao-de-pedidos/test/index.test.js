@@ -1,41 +1,41 @@
 const validarPedido = require('../index.js')
 
-test("pedido válido deve retornar true", () => {
-    const pedidoValido = {
-  cliente: "João",
-  total: 100,
-  itens: ["produto 1", "produto 2"]
+test("Pedido válido deve retornar true", () => {
+  const pedidoValido = {
+  cliente: "Carlos",
+  total: 150,
+  itens: ["produto A",]
 }
     const pedido = validarPedido(pedidoValido)
     expect(pedido).toBe(true)
 })
 
 test("Pedido com o total de 0 deve retornar false", () => {
-    const pedidoSemValor = {
-  cliente: "João",
+  const pedidoSemValor = {
+  cliente: "Carlos",
   total: 0,
-  itens: ["produto 1", "produto 2"]
+  itens: ["produto A"]
 }
     const valor = validarPedido(pedidoSemValor)
     expect(valor).toBe(false)
 })
 
 test("Pedido sem cliente deve retornar false", () => {
-    const pedidoSemCliente = {
-  total: 100,
-  itens: ["produto 1", "produto 2"]
+  const cliente = {
+  total: 150,
+  itens: ["produto A"]
 }
 
-  const resultado = validarPedido(pedidoSemCliente)
+  const resultado = validarPedido(cliente)
   expect(resultado).toBe(false)
 })
 
 test("Pedido sem itens deve retornar false", () => {
-    const pedidoSemItens = {
-  cliente: "João",
-  total: 100,
+    const pedidos = {
+  cliente: "Carlos",
+  total: 150,
   itens: []
 }
-    const itens = validarPedido(pedidoSemItens)
+    const itens = validarPedido(pedidos)
     expect(itens).toBe(false)
 })
