@@ -7,9 +7,9 @@ beforeEach(() => {
 
 describe("Testando tarefaService", () => {
     test("Deve cadastrar uma tarefa", () => {
-        const resultado = cadastrarTarefa = ("estudar para a prova")
+        const resultado = cadastrarTarefa("estudar para a prova")
 
-         expect(totalTarefas)(resultado).toBe(true)
+         expect(resultado).toBe(true)
     })
 })
 

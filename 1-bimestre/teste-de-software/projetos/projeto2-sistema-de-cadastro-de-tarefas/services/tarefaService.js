@@ -5,7 +5,8 @@ function cadastrarTarefa(descricao) {
         return false
     }
     
-    adicionarTarefa.tarefas.push({ descricao })
+    const tarefa = { descricao } 
+    adicionarTarefa(tarefa)
     return true
 }
 
