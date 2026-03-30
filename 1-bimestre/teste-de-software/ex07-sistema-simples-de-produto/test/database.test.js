@@ -1,5 +1,5 @@
 const { adicionarProduto, limparBanco } = require("../database/database")
-
+const { cadastrarProduto } = require("../services/proodutoService")
 beforeEach(() => {
     limparBanco()
 })
@@ -7,7 +7,7 @@ beforeEach(() => {
 test("Deve adicionar um produto", () => {
     adicionarProduto({ nome:"Melancia" })
 
-    const Produtos = listarProdutos()
+    const Produtos = cadastrarProduto()
 
     expect(Produtos.length).toBe(1)
 })
